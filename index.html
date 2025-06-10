@@ -309,34 +309,33 @@
 
             // Show loading indicator (optional, but good for UX)
             const submitButton = form.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML; // Store original content to restore later
+            const originalButtonContent = submitButton.innerHTML; // Store original content to restore later
             submitButton.innerHTML = 'กำลังส่ง...'; // Change button text to indicate loading
             submitButton.disabled = true; // Disable button to prevent multiple submissions
 
-            // Collect form data
+            // Collect form data using FormData
             const formData = new FormData(form);
-            const params = new URLSearchParams(); // ใช้ URLSearchParams เพื่อสร้าง body แบบ x-www-form-urlencoded
+            const params = new URLSearchParams(); // Use URLSearchParams to create x-www-form-urlencoded body
 
             // Populate URLSearchParams with form data
             for (let [key, value] of formData.entries()) {
-                // ไม่ต้องจัดการ "otherChannelText" พิเศษตรงนี้ ปล่อยให้ Apps Script จัดการเอง
-                // แต่ต้องแน่ใจว่าได้ส่งค่าไปให้ Apps Script
                 params.append(key, value);
             }
-            // หาก "อื่น ๆ" ไม่ถูกเลือก ให้ลบค่า otherChannelText ออกจาก params ก่อนส่ง
+            // If "อื่น ๆ" checkbox is NOT checked, remove the otherChannelText parameter
             if (!otherChannelCheckbox.checked) {
                 params.delete('otherChannelText');
             }
             
             // IMPORTANT: Replace 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE' with your actual deployed Google Apps Script URL
-            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxxKRADzC-H_eMf6tmrgv8_ZlJwakjBbUaJvAj2O05PvHdlM07pKXkGrtVzyZIE6nMvA/exec'; // <<<--- เปลี่ยนเป็น URL ของ Google Apps Script ที่คุณ Deploy ใหม่
+            // ใช้ URL ที่คุณได้จากการ Deploy Google Apps Script ล่าสุด
+            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzsJqtY96LKeo0lIYYx81bi57_q7dOwwtjy9SvnbYbUQ-wmvlnzTenLUDlNT3buu3WZBg/exec'; // <<<--- เปลี่ยนเป็น URL ของ Google Apps Script ที่คุณ Deploy ใหม่
 
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
-                    // ไม่ใช้ 'mode: no-cors' เพื่อให้เห็น Error ใน Console ได้
+                    // ลบ 'mode: no-cors' ออกเพื่อให้เห็น Error ใน Console ได้
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded', // กำหนด Content-Type ให้ถูกต้อง
+                        'Content-Type': 'application/x-www-form-urlencoded', // ตั้งค่า Content-Type ให้ถูกต้อง
                     },
                     body: params.toString() // แปลง URLSearchParams เป็น string สำหรับ body
                 });
@@ -362,7 +361,7 @@
                 alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตและลองใหม่อีกครั้ง'); 
             } finally {
                 // ไม่ว่าจะสำเร็จหรือล้มเหลว ให้คืนค่าปุ่มและเปิดใช้งาน
-                submitButton.innerHTML = originalButtonText; 
+                submitButton.innerHTML = originalButtonContent; // Restore original button content (text + icon)
                 submitButton.disabled = false;
             }
         });
