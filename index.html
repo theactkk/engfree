@@ -351,7 +351,7 @@
 
             <!-- Expectations -->
             <div class="input-group">
-                <label for="expectations" class="input-label"><i class="fas fa-lightbulb"></i> ความคาดหวังในการติวกับ The Act ในครั้งนี้</label>
+                <label class="input-label"><i class="fas fa-lightbulb"></i> ความคาดหวังในการติวกับ The Act ในครั้งนี้</label>
                 <textarea id="expectations" name="expectations" class="textarea-input" rows="4" placeholder="กรุณาอธิบายความคาดหวังของคุณในการติวครั้งนี้"></textarea>
             </div>
 
@@ -395,7 +395,7 @@
         const thankYouMessage = document.getElementById('thankYouMessage');
         const otherSourceCheckbox = document.getElementById('otherSourceCheckbox');
         const otherSourceText = document.getElementById('otherSourceText');
-        const urlErrorBox = document.getElementById('urlError'); // Get the new error box
+        const urlErrorBox = document.getElementById('urlError'); // Get the error box
 
         // Function to set the logo image source (no longer needed as the image is removed)
         function setLogoSource() {
@@ -429,12 +429,12 @@
             }
 
             // ************************************************************************************************
-            // ***** สำคัญมาก: กรุณาเปลี่ยน 'YOUR_GOOGLE_SHEET_WEB_APP_URL' เป็น URL จริงของ Google Apps Script Web App ของคุณ *****
-            // ***** คุณสามารถหา URL นี้ได้หลังจากเผยแพร่ (Deploy) Script ของคุณใน Google Sheet แล้ว *****
-            // ***** URL จะเริ่มต้นด้วย "https://script.google.com/macros/" *****
+            // ***** สำคัญมาก: URL ของ Google Apps Script Web App ของคุณถูกตั้งค่าไว้ที่นี่แล้ว *****
+            // ***** ไม่จำเป็นต้องแก้ไขอีก หากคุณได้ Deploy Script ใน Google Sheet ถูกต้องแล้ว *****
             // ************************************************************************************************
-            const googleSheetWebAppURL = "YOUR_GOOGLE_SHEET_WEB_APP_URL"; 
+            const googleSheetWebAppURL = "https://script.google.com/macros/s/AKfycbzXCy_5rN6CoaGV9Pz_m7zwLS4JmaOOZwWJw5V4Yyl8KEBE_KpIX-HJlSZdAzTTKpAE/exec"; 
             
+            // Check if the URL is still the placeholder or invalid (should not happen if correctly updated)
             if (googleSheetWebAppURL === "YOUR_GOOGLE_SHEET_WEB_APP_URL" || !googleSheetWebAppURL.startsWith("https://script.google.com/macros/")) {
                 console.error("Error: Please replace 'YOUR_GOOGLE_SHEET_WEB_APP_URL' with your actual Google Apps Script Web App URL.");
                 urlErrorBox.style.display = 'block'; // Show the error message box
