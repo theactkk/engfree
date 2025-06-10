@@ -6,183 +6,123 @@
     <title>สมัครติวฟรี! อังกฤษพิชิต TCAS</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Custom styles to enhance Tailwind or add specific gradients/shadows */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Very light gray background */
+            background-color: #f7fdee; /* Very light green background */
         }
-        .form-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            background-color: #ffffff;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
-            padding: 2.5rem;
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .header-bg {
-            background: linear-gradient(to right top, #ffecd2 0%, #fcb69f 100%); /* Warm light orange gradient */
-            padding: 2.5rem;
-            border-radius: 1rem 1rem 0 0;
-            text-align: center;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
         }
-        .form-group label {
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 0.5rem;
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
         }
-        .form-input, .form-select, .form-textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 0.5rem;
-            transition: all 0.2s ease-in-out;
-            outline: none;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
-            border-color: #A7F3D0; /* Light green on focus */
-            box-shadow: 0 0 0 3px rgba(167, 243, 208, 0.5); /* Light green shadow */
-        }
-        .submit-button {
-            background-color: #2ECC71; /* Green */
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-        .submit-button:hover {
-            background-color: #27AE60; /* Darker green on hover */
-            box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
-        }
-        /* Removed .logo-img styling as the image is no longer present */
     </style>
 </head>
-<body class="bg-gray-100 p-4 sm:p-6 md:p-8">
-    <div class="form-container">
-        <div class="header-bg -mt-10 -mx-10 mb-10 p-8 rounded-t-lg">
-            <!-- Project logo was here, now removed as per user request -->
-            <h2 class="text-3xl font-bold text-gray-800 mb-2">สมัครติวฟรี! อังกฤษพิชิต TCAS ทุกสนามสอบ กับ The Act.</h2>
-            <p class="text-gray-700 text-lg">เลือกรอบเรียนที่คุณสะดวก พร้อมรับสิทธิประโยชน์พิเศษมากมาย</p>
+<body class="p-4 sm:p-6 md:p-8 lg:p-12">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100">
+        <div class="text-center mb-8">
+            <!-- Icon for course registration -->
+            <svg class="w-16 h-16 mx-auto text-green-500 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2h-4v2h4V4zm6 16H4V8h16v12z"/>
+                <path d="M12 10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
+            <h1 class="text-3xl sm:text-4xl font-bold text-orange-600 mb-2">
+                สมัครติวฟรี! อังกฤษพิชิต TCAS ทุกสนามสอบ กับ The Act.
+            </h1>
+            <p class="text-lg text-gray-700">
+                เลือกรอบเรียนที่คุณสะดวก พร้อมรับสิทธิประโยชน์พิเศษมากมาย
+            </p>
         </div>
 
-        <!--
-            IMPORTANT: For Google Sheet integration, you MUST:
-            1. Create a Google Form with questions matching the fields below.
-            2. Get the Google Form's submission URL (action attribute):
-               - Go to your Google Form -> 'Send' -> 'Embed HTML' tab.
-               - Copy the 'src' URL from the <iframe>. It looks like:
-                 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true'
-               - Change 'viewform?embedded=true' to 'formResponse'.
-                 So it should look like:
-                 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse'
-               - Replace 'YOUR_GOOGLE_FORM_ACTION_URL' below with this URL.
-            3. Get the 'name' attributes for each input field (e.g., 'entry.123456789'):
-               - In your Google Form, fill out a sample submission for all fields.
-               - Click 'Get pre-filled link' (under 'Send' -> 'Link' tab, click 'Get pre-filled link').
-               - Copy the pre-filled link and paste it into a text editor.
-               - You will see parameters like 'entry.123456789=SampleValue'.
-               - Replace the placeholder 'entry.XXXXXXXXX' in EACH input/select/textarea 'name' attribute
-                 below with the actual 'entry.ID' corresponding to your Google Form question.
-        -->
-        <form id="tcasRegistrationForm" action="https://script.google.com/macros/s/AKfycby6-ak5wP2Fo4VSUh_lqc_N1gd1AARZq_jhUtGQ-RnxfeLJzmFU9XrROv0_XIl0-LPk/exec" method="POST" target="_blank">
+        <form id="tcasForm" class="space-y-6">
             <!-- Privacy Policy Checkbox -->
-            <div class="form-group mb-6">
-                <input type="checkbox" id="privacyConsent" name="entry.1000001" value="ยอมรับ" class="mr-2 h-5 w-5 text-green-500 rounded focus:ring-green-400" required>
-                <label for="privacyConsent" class="text-gray-700 text-base">
-                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                    ข้าพเจ้าได้ทำความเข้าใจรายละเอียดค่าย และมีความประสงค์จะกรอกข้อมูลเพื่อสมัครติวครั้งนี้ และได้อ่าน
-                    <a href="https://www.theactkk.net/%E0%B8%99%E0%B9%82%E0%B8%A2%E0%B8%9A%E0%B8%B2%E0%B8%A2%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AA%E0%B9%88%E0%B8%A7%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%A7" target="_blank" class="text-blue-500 hover:underline">นโยบายความเป็นส่วนตัว</a>
-                    แล้ว
+            <div class="bg-orange-50 p-4 rounded-xl flex items-start space-x-3 shadow-sm">
+                <input type="checkbox" id="privacyAgree" name="privacyAgree" required class="mt-1 custom-checkbox text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                <label for="privacyAgree" class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    ข้าพเจ้าได้ทำความเข้าใจรายละเอียดค่าย และมีความประสงค์จะกรอกข้อมูลเพื่อสมัครติวครั้งนี้ และรับทราบ
+                    <a href="https://www.theactkk.net/นโยบายความเป็นส่วนตัว" target="_blank" class="text-blue-600 hover:underline font-medium">
+                        นโยบายความเป็นส่วนตัว
+                    </a>
                 </label>
             </div>
 
-            <!-- คำนำหน้า (Salutation) -->
-            <div class="form-group mb-6">
-                <label for="salutation" class="block text-gray-700 text-sm mb-2"><i class="fas fa-user-circle mr-2 text-orange-500"></i>คำนำหน้า</label>
-                <select id="salutation" name="entry.1000002" class="form-select" required>
-                    <option value="">เลือกคำนำหน้า</option>
-                    <option value="เด็กชาย">เด็กชาย</option>
-                    <option value="เด็กหญิง">เด็กหญิง</option>
-                    <option value="นาย">นาย</option>
-                    <option value="นางสาว">นางสาว</option>
-                </select>
+            <!-- Basic Info Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-green-50 p-6 rounded-2xl shadow-md">
+                <div>
+                    <label for="prefix" class="block text-gray-700 text-sm font-semibold mb-2">คำนำหน้า <span class="text-red-500">*</span></label>
+                    <select id="prefix" name="prefix" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-white">
+                        <option value="">เลือกคำนำหน้า</option>
+                        <option value="เด็กชาย">เด็กชาย</option>
+                        <option value="เด็กหญิง">เด็กหญิง</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นางสาว">นางสาว</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">ชื่อ - นามสกุล <span class="text-red-500">*</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="กรอกชื่อ-นามสกุล" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div>
+                    <label for="nickname" class="block text-gray-700 text-sm font-semibold mb-2">ชื่อเล่น</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="กรอกชื่อเล่น" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div>
+                    <label for="grade" class="block text-gray-700 text-sm font-semibold mb-2">ระดับชั้น <span class="text-red-500">*</span></label>
+                    <select id="grade" name="grade" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-white">
+                        <option value="">เลือกระดับชั้น</option>
+                        <option value="ม.1">ม.1</option>
+                        <option value="ม.2">ม.2</option>
+                        <option value="ม.3">ม.3</option>
+                        <option value="ม.4">ม.4</option>
+                        <option value="ม.5">ม.5</option>
+                        <option value="ม.6">ม.6</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="schoolName" class="block text-gray-700 text-sm font-semibold mb-2">โรงเรียน <span class="text-red-500">*</span></label>
+                    <input type="text" id="schoolName" name="schoolName" placeholder="กรอกชื่อโรงเรียน" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div>
+                    <label for="schoolProvince" class="block text-gray-700 text-sm font-semibold mb-2">จังหวัดที่ตั้งโรงเรียน <span class="text-red-500">*</span></label>
+                    <input type="text" id="schoolProvince" name="schoolProvince" placeholder="กรอกจังหวัด" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
             </div>
 
-            <!-- ชื่อ - นามสกุล (Full Name) -->
-            <div class="form-group mb-6">
-                <label for="fullName" class="block text-gray-700 text-sm mb-2"><i class="fas fa-id-card mr-2 text-green-500"></i>ชื่อ - นามสกุล</label>
-                <input type="text" id="fullName" name="entry.1000003" class="form-input" placeholder="กรุณากรอกชื่อ - นามสกุล" required>
+            <!-- Contact Info Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-orange-50 p-6 rounded-2xl shadow-md">
+                <div>
+                    <label for="applicantPhone" class="block text-gray-700 text-sm font-semibold mb-2">เบอร์ติดต่อผู้สมัคร <span class="text-red-500">*</span></label>
+                    <input type="tel" id="applicantPhone" name="applicantPhone" placeholder="0XXXXXXXXX" required pattern="[0-9]{10}" title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div>
+                    <label for="parentPhone" class="block text-gray-700 text-sm font-semibold mb-2">เบอร์ติดต่อผู้ปกครอง <span class="text-red-500">*</span></label>
+                    <input type="tel" id="parentPhone" name="parentPhone" placeholder="0XXXXXXXXX" required pattern="[0-9]{10}" title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div>
+                    <label for="applicantEmail" class="block text-gray-700 text-sm font-semibold mb-2">อีเมลผู้สมัครเพื่อรับไฟล์เอกสารติว (แนะนำ Gmail เท่านั้น) <span class="text-red-500">*</span></label>
+                    <input type="email" id="applicantEmail" name="applicantEmail" placeholder="example@gmail.com" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
+                <div>
+                    <label for="lineId" class="block text-gray-700 text-sm font-semibold mb-2">LINE ID ผู้สมัคร</label>
+                    <input type="text" id="lineId" name="lineId" placeholder="กรอก LINE ID" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500">
+                </div>
             </div>
 
-            <!-- ชื่อเล่น (Nickname) -->
-            <div class="form-group mb-6">
-                <label for="nickname" class="block text-gray-700 text-sm mb-2"><i class="fas fa-user-tag mr-2 text-orange-500"></i>ชื่อเล่น</label>
-                <input type="text" id="nickname" name="entry.1000004" class="form-input" placeholder="กรุณากรอกชื่อเล่น" required>
-            </div>
-
-            <!-- ระดับชั้น (Grade Level) -->
-            <div class="form-group mb-6">
-                <label for="gradeLevel" class="block text-gray-700 text-sm mb-2"><i class="fas fa-graduation-cap mr-2 text-green-500"></i>ระดับชั้น</label>
-                <select id="gradeLevel" name="entry.1000005" class="form-select" required>
-                    <option value="">เลือกระดับชั้น</option>
-                    <option value="ม.1">ม.1</option>
-                    <option value="ม.2">ม.2</option>
-                    <option value="ม.3">ม.3</option>
-                    <option value="ม.4">ม.4</option>
-                    <option value="ม.5">ม.5</option>
-                    <option value="ม.6">ม.6</option>
-                </select>
-            </div>
-
-            <!-- โรงเรียน (School) -->
-            <div class="form-group mb-6">
-                <label for="school" class="block text-gray-700 text-sm mb-2"><i class="fas fa-school mr-2 text-orange-500"></i>โรงเรียน</label>
-                <input type="text" id="school" name="entry.1000006" class="form-input" placeholder="กรุณากรอกชื่อโรงเรียน" required>
-            </div>
-
-            <!-- จังหวัดที่ตั้งโรงเรียน (School Province) -->
-            <div class="form-group mb-6">
-                <label for="schoolProvince" class="block text-gray-700 text-sm mb-2"><i class="fas fa-map-marker-alt mr-2 text-green-500"></i>จังหวัดที่ตั้งโรงเรียน</label>
-                <input type="text" id="schoolProvince" name="entry.1000007" class="form-input" placeholder="กรุณากรอกจังหวัดที่ตั้งโรงเรียน" required>
-            </div>
-
-            <!-- เบอร์ติดต่อผู้สมัคร (Applicant's Phone) -->
-            <div class="form-group mb-6">
-                <label for="applicantPhone" class="block text-gray-700 text-sm mb-2"><i class="fas fa-phone mr-2 text-orange-500"></i>เบอร์ติดต่อผู้สมัคร</label>
-                <input type="tel" id="applicantPhone" name="entry.1000008" class="form-input" placeholder="กรุณากรอกเบอร์ติดต่อผู้สมัคร (ตัวอย่าง: 0812345678)" pattern="[0-9]{10}" title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก" required>
-            </div>
-
-            <!-- เบอร์ติดต่อผู้ปกครอง (Parent's Phone) -->
-            <div class="form-group mb-6">
-                <label for="parentPhone" class="block text-gray-700 text-sm mb-2"><i class="fas fa-phone-alt mr-2 text-green-500"></i>เบอร์ติดต่อผู้ปกครอง</label>
-                <input type="tel" id="parentPhone" name="entry.1000009" class="form-input" placeholder="กรุณากรอกเบอร์ติดต่อผู้ปกครอง (ตัวอย่าง: 0812345678)" pattern="[0-9]{10}" title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก" required>
-            </div>
-
-            <!-- อีเมลผู้สมัครเพื่อรับไฟล์เอกสารติว (Applicant's Email) -->
-            <div class="form-group mb-6">
-                <label for="applicantEmail" class="block text-gray-700 text-sm mb-2"><i class="fas fa-envelope mr-2 text-orange-500"></i>อีเมลผู้สมัครเพื่อรับไฟล์เอกสารติว</label>
-                <input type="email" id="applicantEmail" name="entry.1000010" class="form-input" placeholder="กรุณากรอกอีเมล" required>
-            </div>
-
-            <!-- LINE ID ผู้สมัคร (Applicant's LINE ID) -->
-            <div class="form-group mb-6">
-                <label for="lineId" class="block text-gray-700 text-sm mb-2"><i class="fab fa-line mr-2 text-green-500"></i>LINE ID ผู้สมัคร</label>
-                <input type="text" id="lineId" name="entry.1000011" class="form-input" placeholder="กรุณากรอก LINE ID" required>
-            </div>
-
-            <!-- คณะ/สาขาที่อยากเข้าเรียน (Desired Faculty/Major) -->
-            <div class="form-group mb-6">
-                <label for="desiredFaculty" class="block text-gray-700 text-sm mb-2"><i class="fas fa-building mr-2 text-orange-500"></i>คณะ/สาขาที่อยากเข้าเรียน</label>
-                <select id="desiredFaculty" name="entry.1000012" class="form-select" required>
+            <!-- Academic Preferences Section -->
+            <div class="bg-green-50 p-6 rounded-2xl shadow-md">
+                <label for="desiredFaculty" class="block text-gray-700 text-sm font-semibold mb-2">คณะ/สาขาที่อยากเข้าเรียน <span class="text-red-500">*</span></label>
+                <select id="desiredFaculty" name="desiredFaculty" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-white">
                     <option value="">เลือกคณะ/สาขา</option>
                     <option value="คณะแพทยศาสตร์">คณะแพทยศาสตร์</option>
                     <option value="คณะทันตแพทยศาสตร์">คณะทันตแพทยศาสตร์</option>
@@ -211,134 +151,230 @@
                 </select>
             </div>
 
-            <!-- เลือกรอบที่ต้องการสมัครติว (Preferred Tutoring Session) -->
-            <div class="form-group mb-6">
-                <label class="block text-gray-700 text-sm mb-2"><i class="fas fa-calendar-alt mr-2 text-green-500"></i>เลือกรอบที่ต้องการสมัครติว</label>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <input type="radio" id="session1" name="entry.1000013" value="19 มิ.ย. 68 เวลา 18.30 - 21.30 น." class="mr-2 h-4 w-4 text-green-500 focus:ring-green-400" required>
-                        <label for="session1" class="text-gray-700">19 มิ.ย. 68 เวลา 18.30 - 21.30 น.</label>
+            <!-- Course and Contact Preferences -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-orange-50 p-6 rounded-2xl shadow-md">
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2">เลือกรอบที่ต้องการสมัครติว <span class="text-red-500">*</span></label>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <input type="radio" id="session1" name="courseSession" value="19 มิ.ย. 68 เวลา 18.30 - 21.30 น." required class="text-orange-500 focus:ring-orange-500">
+                            <label for="session1" class="ml-2 text-gray-700">19 มิ.ย. 68 เวลา 18.30 - 21.30 น.</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="session2" name="courseSession" value="26 มิ.ย. 68 เวลา 18.30 - 21.30 น." required class="text-orange-500 focus:ring-orange-500">
+                            <label for="session2" class="ml-2 text-gray-700">26 มิ.ย. 68 เวลา 18.30 - 21.30 น.</label>
+                        </div>
                     </div>
-                    <div class="flex items-center">
-                        <input type="radio" id="session2" name="entry.1000013" value="26 มิ.ย. 68 เวลา 18.30 - 21.30 น." class="mr-2 h-4 w-4 text-green-500 focus:ring-green-400">
-                        <label for="session2" class="text-gray-700">26 มิ.ย. 68 เวลา 18.30 - 21.30 น.</label>
-                    </div>
+                </div>
+                <div>
+                    <label for="contactTime" class="block text-gray-700 text-sm font-semibold mb-2">ช่วงเวลาที่สะดวกให้ติดต่อกลับ <span class="text-red-500">*</span></label>
+                    <select id="contactTime" name="contactTime" required class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 bg-white">
+                        <option value="">เลือกช่วงเวลา</option>
+                        <option value="9.00 น.">9.00 น.</option>
+                        <option value="10.00 น.">10.00 น.</option>
+                        <option value="11.00 น.">11.00 น.</option>
+                        <option value="12.00 น.">12.00 น.</option>
+                        <option value="13.00 น.">13.00 น.</option>
+                        <option value="14.00 น.">14.00 น.</option>
+                        <option value="15.00 น.">15.00 น.</option>
+                        <option value="16.00 น.">16.00 น.</option>
+                        <option value="17.00 น.">17.00 น.</option>
+                        <option value="18.00 น.">18.00 น.</option>
+                        <option value="19.00 น.">19.00 น.</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- ช่วงเวลาที่สะดวกให้ติดต่อกลับ (Convenient Contact Time) -->
-            <div class="form-group mb-6">
-                <label for="contactTime" class="block text-gray-700 text-sm mb-2"><i class="fas fa-clock mr-2 text-orange-500"></i>ช่วงเวลาที่สะดวกให้ติดต่อกลับ</label>
-                <select id="contactTime" name="entry.1000014" class="form-select" required>
-                    <option value="">เลือกช่วงเวลา</option>
-                    <script>
-                        // Dynamically generate time options from 9:00 to 19:00
-                        for (let i = 9; i <= 19; i++) {
-                            const hour = i.toString().padStart(2, '0');
-                            document.write(`<option value="${hour}.00 น.">${hour}.00 น.</option>`);
-                        }
-                    </script>
-                </select>
+            <!-- Expectations and Referral -->
+            <div class="bg-green-50 p-6 rounded-2xl shadow-md">
+                <label for="expectations" class="block text-gray-700 text-sm font-semibold mb-2">ความคาดหวังในการติวกับ The Act ในครั้งนี้</label>
+                <textarea id="expectations" name="expectations" rows="4" placeholder="กรอกความคาดหวังของคุณ" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500"></textarea>
             </div>
 
-            <!-- ความคาดหวังในการติวกับ The Act ในครั้งนี้ (Expectations) -->
-            <div class="form-group mb-6">
-                <label for="expectations" class="block text-gray-700 text-sm mb-2"><i class="fas fa-lightbulb mr-2 text-green-500"></i>ความคาดหวังในการติวกับ The Act ในครั้งนี้</label>
-                <textarea id="expectations" name="entry.1000015" class="form-textarea h-32" placeholder="กรุณากรอกความคาดหวังของคุณ เช่น อยากเพิ่มคะแนนวิชาภาษาอังกฤษ, อยากเข้าใจเนื้อหา TCAS มากขึ้น" required></textarea>
-            </div>
-
-            <!-- คุณรู้จักค่ายติว The Act ผ่านช่องทางใดบ้าง? (How did you know us?) -->
-            <div class="form-group mb-6">
-                <label class="block text-gray-700 text-sm mb-2"><i class="fas fa-bullhorn mr-2 text-orange-500"></i>คุณรู้จักค่ายติว The Act ผ่านช่องทางใดบ้าง? (เลือกได้หลายข้อ)</label>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="Facebook" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">Facebook</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="TikTok" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">TikTok</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="Line OA" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">Line OA</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="เพื่อนแนะนำ" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">เพื่อนแนะนำ</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="ครูแนะนำ" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">ครูแนะนำ</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="โฆษณาออนไลน์" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">โฆษณาออนไลน์</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="เว็บไซต์ The Act" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">เว็บไซต์ The Act</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="Instagram" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">Instagram</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="Twitter" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">Twitter</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="Youtube" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">Youtube</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="ผู้ปกครองแนะนำ" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">ผู้ปกครองแนะนำ</label></div>
-                    <div class="flex items-center"><input type="checkbox" name="entry.1000016" value="รุ่นพี่แนะนำ" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400"><label class="text-gray-700">รุ่นพี่แนะนำ</label></div>
+            <div class="bg-orange-50 p-6 rounded-2xl shadow-md">
+                <label class="block text-gray-700 text-sm font-semibold mb-2">คุณรู้จักค่ายติว The Act ผ่านช่องทางใดบ้าง? (เลือกได้หลายข้อ)</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div class="flex items-center">
-                        <input type="checkbox" id="otherSource" name="entry.1000016" value="อื่นๆ" class="mr-2 h-4 w-4 text-green-500 rounded focus:ring-green-400">
-                        <label for="otherSource" class="text-gray-700">อื่น ๆ (กรุณาระบุ)</label>
-                        <!-- This text input is for the "Other (specify)" detail, it needs a separate entry ID in Google Form -->
-                        <input type="text" id="otherSourceText" name="entry.1000017" class="form-input ml-2 flex-grow hidden" placeholder="ระบุช่องทางอื่น ๆ">
+                        <input type="checkbox" id="channelFacebook" name="referralChannel" value="Facebook" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelFacebook" class="ml-2 text-gray-700">Facebook</label>
                     </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelTikTok" name="referralChannel" value="TikTok" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelTikTok" class="ml-2 text-gray-700">TikTok</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelLineOA" name="referralChannel" value="Line OA" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelLineOA" class="ml-2 text-gray-700">Line OA</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelFriend" name="referralChannel" value="เพื่อนแนะนำ" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelFriend" class="ml-2 text-gray-700">เพื่อนแนะนำ</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelTeacher" name="referralChannel" value="ครูแนะนำ" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelTeacher" class="ml-2 text-gray-700">ครูแนะนำ</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelOnlineAd" name="referralChannel" value="โฆษณาออนไลน์" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelOnlineAd" class="ml-2 text-gray-700">โฆษณาออนไลน์</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelWebsite" name="referralChannel" value="เว็บไซต์ The Act" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelWebsite" class="ml-2 text-gray-700">เว็บไซต์ The Act</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelInstagram" name="referralChannel" value="Instagram" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelInstagram" class="ml-2 text-gray-700">Instagram</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelTwitter" name="referralChannel" value="Twitter" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelTwitter" class="ml-2 text-gray-700">Twitter</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelYoutube" name="referralChannel" value="Youtube" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelYoutube" class="ml-2 text-gray-700">Youtube</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelParent" name="referralChannel" value="ผู้ปกครองแนะนำ" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelParent" class="ml-2 text-gray-700">ผู้ปกครองแนะนำ</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelSenior" name="referralChannel" value="รุ่นพี่แนะนำ" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelSenior" class="ml-2 text-gray-700">รุ่นพี่แนะนำ</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="channelOther" name="referralChannel" value="อื่น ๆ" class="text-orange-500 focus:ring-orange-500 rounded border-gray-300">
+                        <label for="channelOther" class="ml-2 text-gray-700">อื่น ๆ (โปรดระบุ)</label>
+                    </div>
+                    <input type="text" id="otherChannelText" name="otherChannelText" placeholder="กรุณาระบุช่องทางอื่น ๆ" class="w-full p-3 border border-gray-300 rounded-xl focus:ring-orange-500 focus:border-orange-500 mt-2 sm:col-span-2 md:col-span-3 hidden">
                 </div>
             </div>
 
             <!-- Submit Button -->
-            <div class="text-center mt-8">
-                <button type="submit" class="submit-button inline-flex items-center justify-center">
-                    <i class="fas fa-paper-plane mr-3"></i> ส่งใบสมัคร
+            <div class="text-center pt-4">
+                <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-300 text-lg sm:text-xl">
+                    ส่งใบสมัคร
+                    <!-- Pen/Pencil Icon -->
+                    <svg class="inline-block w-6 h-6 ml-2 -mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L15.232 5.232z"></path>
+                    </svg>
                 </button>
             </div>
         </form>
 
-        <!-- Thank You Message (hidden by default, shown after form submission) -->
-        <div id="thankYouMessage" class="hidden text-center mt-8 p-6 bg-green-50 text-green-800 rounded-lg shadow-inner">
-            <h3 class="text-2xl font-bold mb-4">ขอบคุณที่สมัครติวฟรีกับ The Act.</h3>
-            <p class="text-lg mb-4">ให้บันทึกภาพผลการสมัครนี้ ส่งยืนยันการสมัครและเข้ากลุ่มไลน์ที่ไลน์ @theactkk หรือ <a href="https://line.me/R/ti/p/@zay7842v" target="_blank" class="text-blue-600 hover:underline font-semibold">คลิ๊ก</a></p>
-            <i class="fas fa-heart text-green-600 text-4xl"></i>
+        <!-- Thank You Message (hidden by default) -->
+        <div id="thankYouMessage" class="hidden mt-8 p-6 bg-green-100 border border-green-300 text-green-800 rounded-xl text-center shadow-lg animate-fade-in">
+            <svg class="w-16 h-16 mx-auto text-green-600 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <h2 class="text-2xl sm:text-3xl font-bold mb-3">ขอบคุณที่สมัครติวฟรีกับ The Act.</h2>
+            <p class="text-lg mb-4">
+                กรุณาบันทึกภาพผลการสมัครนี้ ส่งยืนยันการสมัครและเข้ากลุ่มไลน์ที่ไลน์ <strong class="text-orange-700">@theactkk</strong> หรือ
+                <a href="https://line.me/R/ti/p/@zay7842v" target="_blank" class="text-blue-600 hover:underline font-bold">
+                    คลิ๊ก
+                </a>
+            </p>
         </div>
     </div>
 
     <script>
-        // JavaScript to handle form submission and show the thank you message
-        document.getElementById('tcasRegistrationForm').addEventListener('submit', function(event) {
-            // Prevent the default form submission to show the custom thank you message
-            // and then perform the actual submission.
-            event.preventDefault();
+        // Get references to elements
+        const form = document.getElementById('tcasForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        const otherChannelCheckbox = document.getElementById('channelOther');
+        const otherChannelTextInput = document.getElementById('otherChannelText');
 
-            const form = event.target;
-            const thankYouMessage = document.getElementById('thankYouMessage');
-
-            // Handle the "Other Source" text input before submission
-            const otherSourceCheckbox = document.getElementById('otherSource');
-            const otherSourceText = document.getElementById('otherSourceText');
-
-            // If "Other" checkbox is checked and text is provided, update the value of the checkbox
-            // to include the specified text. This might not be necessary if Google Forms handles
-            // "Other" with a separate field, but it's good practice for custom submissions.
-            // For Google Forms, the 'entry.1000017' (otherSourceText) will capture the text.
-            // The 'entry.1000016' checkbox for "อื่นๆ" will just send "อื่นๆ".
-
-            // Create a temporary hidden iframe to submit the form without leaving the page
-            const iframe = document.createElement('iframe');
-            iframe.name = 'googleFormsTarget';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-
-            form.target = 'googleFormsTarget'; // Set form target to the hidden iframe
-
-            // Listen for the iframe to load, which indicates the form has been submitted
-            iframe.onload = function() {
-                // Hide the form and show the thank you message after submission
-                form.classList.add('hidden');
-                thankYouMessage.classList.remove('hidden');
-                // Remove the iframe after use
-                document.body.removeChild(iframe);
-            };
-
-            // Submit the form
-            form.submit();
+        // Toggle visibility of the "อื่น ๆ" text input
+        otherChannelCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                otherChannelTextInput.classList.remove('hidden');
+                otherChannelTextInput.setAttribute('required', 'true');
+            } else {
+                otherChannelTextInput.classList.add('hidden');
+                otherChannelTextInput.removeAttribute('required');
+                otherChannelTextInput.value = ''; // Clear value when hidden
+            }
         });
 
-        // Toggle visibility and required attribute of "Other Source" text input
-        document.getElementById('otherSource').addEventListener('change', function() {
-            const otherSourceText = document.getElementById('otherSourceText');
-            if (this.checked) {
-                otherSourceText.classList.remove('hidden');
-                otherSourceText.setAttribute('required', 'required');
-            } else {
-                otherSourceText.classList.add('hidden');
-                otherSourceText.removeAttribute('required');
-                otherSourceText.value = ''; // Clear value when unchecked
+        // Handle form submission
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Basic validation for privacy policy checkbox
+            if (!document.getElementById('privacyAgree').checked) {
+                alert('โปรดยอมรับนโยบายความเป็นส่วนตัวก่อนส่งแบบฟอร์ม');
+                return;
+            }
+
+            // Show loading indicator (optional, but good for UX)
+            form.querySelector('button[type="submit"]').textContent = 'กำลังส่ง...';
+            form.querySelector('button[type="submit"]').disabled = true;
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                // For checkboxes, collect all selected values into an array
+                if (key === 'referralChannel') {
+                    if (!data[key]) {
+                        data[key] = [];
+                    }
+                    data[key].push(value);
+                } else if (key === 'otherChannelText' && otherChannelCheckbox.checked && value.trim() !== '') {
+                    // Append 'อื่น ๆ: [text]' to referralChannel if 'อื่น ๆ' is selected and text is provided
+                    if (!data['referralChannel']) {
+                        data['referralChannel'] = [];
+                    }
+                    if (!data['referralChannel'].includes('อื่น ๆ')) { // Ensure 'อื่น ๆ' is added if not already
+                         data['referralChannel'].push('อื่น ๆ');
+                    }
+                    // Find the index of 'อื่น ๆ' and replace it with the combined string
+                    const otherIndex = data['referralChannel'].indexOf('อื่น ๆ');
+                    if (otherIndex !== -1) {
+                         data['referralChannel'][otherIndex] = `อื่น ๆ: ${value.trim()}`;
+                    } else { // Fallback if 'อื่น ๆ' somehow wasn't added yet
+                         data['referralChannel'].push(`อื่น ๆ: ${value.trim()}`);
+                    }
+                }
+                else {
+                    data[key] = value;
+                }
+            }
+
+            // Special handling for referralChannel to join array elements if it exists
+            if (data.referralChannel && Array.isArray(data.referralChannel)) {
+                data.referralChannel = data.referralChannel.join(', ');
+            }
+
+            // Convert data to JSON string
+            const jsonString = JSON.stringify(data);
+
+            // IMPORTANT: Replace 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE' with your actual deployed Google Apps Script URL
+            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxJNyhmjfA-QCr2YCrf21XLkyJ6vt6C7WPGLxnbR8G6wgbhxEmiy7lj7liAR6kiZsMd/exec'; // <<<--- REPLACE THIS
+
+            try {
+                const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Required for simple requests to Apps Script
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: jsonString
+                });
+
+                // Since we use 'no-cors', we can't directly read the response body.
+                // We'll assume success if no network error occurred.
+                // Display thank you message and hide the form
+                form.classList.add('hidden');
+                thankYouMessage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top for thank you message
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                // Re-enable submit button and show an error message
+                form.querySelector('button[type="submit"]').textContent = 'ส่งใบสมัคร';
+                form.querySelector('button[type="submit"]').disabled = false;
+                alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง'); // Use custom modal in production
             }
         });
     </script>
